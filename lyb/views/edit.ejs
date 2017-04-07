@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编辑</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>编辑</h1>
+<% if (lists.length) {
+
+%>
+<form action="/edit" method="post" >
+
+    <% lists.forEach(function(vo, index){  %>
+    <input type="hidden" id="id" name="id" value="<%=id%>" />
+    用户名：<input type="text" name="name" id="name" value="<%=vo.name%>" /><br />
+    年龄：<input type="text" name="age" id="age" value="<%=vo.age%>" /><br />
+    电话：<input type="text" name="phone" id="phone" value="<%=vo.phone%>" /><br />
+    邮箱：<input type="text" name="email" id="email" value="<%=vo.email%>" /><br />
+    内容：<input type="text" name="content" id="content" value="<%=vo.content%>" /><br />
+    <input type="submit" name="addsubmit" id="addsubmit" value="提交" />
+    <% }) %>
+</form>
+<% } %>
+</body>
+</html>

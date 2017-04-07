@@ -6,6 +6,34 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to <a href="users">点击进入自助接口程序</a></p>
+
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td>姓名</td>
+        <td>邮箱</td>
+        <td>时间</td>
+        <td>内容</td>
+        <td>年龄</td>
+        <td>电话</td>
+        <td>编辑</td>
+        <td>删除</td>
+      </tr>
+      <% lists.forEach(function(lyb, index){ %>
+      <tr>
+        <td><%=lyb.name%></td>
+        <td><%=lyb.email%></td>
+        <td><%=lyb.time%></td>
+        <td><%=lyb.content%></td>
+        <td><%=lyb.age%></td>
+        <td><%=lyb.phone%></td>
+        <td><a href="/edit?id=<%=lyb.id%>">编辑</a></td>
+        <td><a href="/delete?id=<%=lyb.id%>">删除</a></td>
+      </tr>
+      <% }) %>
+      <tr>
+        <td colspan="8"><input type="button" value="添加" name="add" id="add" onclick="location.href='/add';" /> </td>
+      </tr>
+    </table>
   </body>
 </html>
