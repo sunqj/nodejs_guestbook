@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= title %></h1>
+<p>http://www.cnblogs.com/y-yxh/p/5761941.html</p>
+
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>接口名称</td>
+        <td>内容</td>
+        <td>编辑</td>
+        <td>删除</td>
+    </tr>
+    <% lists.forEach(function(lyb, index){ %>
+    <tr>
+        <td><a href="show?id=<%=lyb.id%>""><%=lyb.name%></a></td>
+        <td><%=lyb.content%></td>
+        <td><a href="listedit?id=<%=lyb.id%>">编辑</a></td>
+        <td><a href="listdelete?id=<%=lyb.id%>">删除</a></td>
+    </tr>
+    <% }) %>
+    <tr>
+        <td colspan="4"><input type="button" value="添加" name="add" id="add" onclick="location.href='listadd';" /> </td>
+    </tr>
+</table>
+</body>
+</html>
